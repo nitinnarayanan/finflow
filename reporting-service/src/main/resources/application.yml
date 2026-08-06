@@ -1,0 +1,10 @@
+server.port: 8088
+spring:
+  application.name: reporting-service
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:localhost:9092}
+    consumer:
+      group-id: reporting-service
+      auto-offset-reset: earliest
+management.endpoints.web.exposure.include: health,info,prometheus,metrics
+management.endpoint.health.probes.enabled: true

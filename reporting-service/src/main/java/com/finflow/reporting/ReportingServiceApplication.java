@@ -1,0 +1,1 @@
+package com.finflow.reporting; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication(scanBasePackages="com.finflow") public class ReportingServiceApplication{public static void main(String[]a){SpringApplication.run(ReportingServiceApplication.class,a);}}

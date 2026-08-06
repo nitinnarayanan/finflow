@@ -1,0 +1,2 @@
+CREATE TABLE accounts(id UUID PRIMARY KEY, customer_id UUID NOT NULL, currency VARCHAR(3) NOT NULL, posted_balance NUMERIC(19,4) NOT NULL, available_balance NUMERIC(19,4) NOT NULL, status VARCHAR(30) NOT NULL, version BIGINT NOT NULL DEFAULT 0, updated_at TIMESTAMPTZ NOT NULL DEFAULT now());
+INSERT INTO accounts VALUES ('11111111-1111-1111-1111-111111111111','aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa','USD',5000,5000,'ACTIVE',0,now()),('22222222-2222-2222-2222-222222222222','bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb','USD',1000,1000,'ACTIVE',0,now());

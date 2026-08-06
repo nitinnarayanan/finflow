@@ -1,0 +1,19 @@
+server.port: 8084
+spring:
+  application.name: payment-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/payments}
+    username: ${DB_USER:finflow}
+    password: ${DB_PASSWORD:finflow}
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: validate
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:localhost:9092}
+  flyway.enabled: true
+clients:
+  account-url: ${ACCOUNT_URL:http://localhost:8083}
+  fraud-url: ${FRAUD_URL:http://localhost:8086}
+management.endpoints.web.exposure.include: health,info,prometheus,metrics
+management.endpoint.health.probes.enabled: true
+resilience4j.circuitbreaker.instances.fraud.slidingWindowSize: 10

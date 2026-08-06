@@ -1,0 +1,1 @@
+package com.finflow.payment; import org.springframework.data.jpa.repository.*; import java.util.*; interface PaymentRepository extends JpaRepository<Payment,UUID>{Optional<Payment> findByIdempotencyKey(String key);} interface OutboxRepository extends JpaRepository<OutboxEvent,UUID>{List<OutboxEvent> findTop100ByStatusOrderByCreatedAt(String status);}

@@ -1,0 +1,1 @@
+package com.finflow.user; import org.springframework.web.bind.annotation.*; import java.util.*; @RestController @RequestMapping("/api/v1/users") class InfoController{@GetMapping("/info") Map<String,Object> info(){return Map.of("service","user-service","status","UP","purpose","production-playground");}}

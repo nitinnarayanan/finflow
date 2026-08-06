@@ -1,0 +1,1 @@
+package com.finflow.transaction; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication(scanBasePackages="com.finflow") public class TransactionServiceApplication{public static void main(String[]a){SpringApplication.run(TransactionServiceApplication.class,a);}}

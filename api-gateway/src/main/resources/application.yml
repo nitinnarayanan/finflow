@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: 6379
+  cloud:
+    gateway:
+      routes:
+        - id: auth
+          uri: ${AUTH_URL:http://localhost:8081}
+          predicates: [Path=/api/v1/auth/**]
+        - id: users
+          uri: ${USER_URL:http://localhost:8082}
+          predicates: [Path=/api/v1/users/**]
+        - id: accounts
+          uri: ${ACCOUNT_URL:http://localhost:8083}
+          predicates: [Path=/api/v1/accounts/**]
+        - id: payments
+          uri: ${PAYMENT_URL:http://localhost:8084}
+          predicates: [Path=/api/v1/payments/**]
+        - id: transactions
+          uri: ${TRANSACTION_URL:http://localhost:8085}
+          predicates: [Path=/api/v1/transactions/**]
+management.endpoints.web.exposure.include: health,info,prometheus,gateway

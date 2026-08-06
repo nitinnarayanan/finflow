@@ -1,0 +1,4 @@
+package com.finflow.auth; import jakarta.validation.constraints.*; import org.springframework.web.bind.annotation.*; import java.time.*; import java.util.*;
+@RestController @RequestMapping("/api/v1/auth") class AuthController{record Login(@NotBlank String username,@NotBlank String password){} record Token(String accessToken,String refreshToken,long expiresIn,String tokenType){}
+@PostMapping("/login") Token login(@RequestBody Login r){if(!r.password().equals("demo123"))throw new IllegalArgumentException("Invalid credentials");String p=Base64.getUrlEncoder().withoutPadding().encodeToString((r.username()+":"+Instant.now()).getBytes());return new Token("demo."+p+".signature",UUID.randomUUID().toString(),900,"Bearer");}
+@PostMapping("/refresh") Token refresh(){return new Token("demo."+UUID.randomUUID()+".signature",UUID.randomUUID().toString(),900,"Bearer");}}

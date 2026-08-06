@@ -1,0 +1,1 @@
+package com.finflow.account; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication(scanBasePackages="com.finflow") public class AccountServiceApplication{public static void main(String[]a){SpringApplication.run(AccountServiceApplication.class,a);}}

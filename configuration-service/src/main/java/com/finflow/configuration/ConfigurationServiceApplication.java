@@ -1,0 +1,1 @@
+package com.finflow.configuration; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication(scanBasePackages="com.finflow") public class ConfigurationServiceApplication{public static void main(String[]a){SpringApplication.run(ConfigurationServiceApplication.class,a);}}

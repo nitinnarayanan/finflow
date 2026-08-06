@@ -1,0 +1,1 @@
+package com.finflow.legacyintegration; import org.springframework.boot.SpringApplication; import org.springframework.boot.autoconfigure.SpringBootApplication; @SpringBootApplication(scanBasePackages="com.finflow") public class LegacyIntegrationApplication{public static void main(String[]a){SpringApplication.run(LegacyIntegrationApplication.class,a);}}

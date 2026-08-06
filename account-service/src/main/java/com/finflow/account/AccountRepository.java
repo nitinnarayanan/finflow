@@ -1,0 +1,1 @@
+package com.finflow.account; import org.springframework.data.jpa.repository.*; import jakarta.persistence.LockModeType; import java.util.*; interface AccountRepository extends JpaRepository<Account,UUID>{@Lock(LockModeType.PESSIMISTIC_WRITE) @Query("select a from Account a where a.id=:id") Optional<Account> lockById(UUID id);}
